@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
+//material-ui
 import { withStyles } from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
 import Button from 'material-ui/Button';
@@ -10,10 +13,6 @@ const styles = {
   list: {
     padding: 0,
     margin: 20,
-
-  },
-  listFull: {
-    width: 'auto',
   },
   button: {
     padding: 0,
@@ -32,34 +31,29 @@ class Drawers extends React.Component {
       [side]: open,
     });
   };
-
   render() {
     const { classes } = this.props;
 
     const sideList = (
       <div className={classes.list}>
-        <List>珈琲</List>
-        <Divider />
-        <List>ケーキセット</List>
-        <Divider />
-        <List>ddd</List>
-        <Divider />
-        <List>ddd</List>
-      </div>
-    );
-
-    const fullList = (
-      <div className={classes.listFull}>
-        <List>ffff</List>
-        <Divider />
-        <List>ddd</List>
+        <List>ブログの投稿</List><Divider />
+        <List>メニューの編集</List><Divider />
+        <List>写真の追加</List><Divider />
       </div>
     );
 
     return (
       <div>
-        <Button className={classes.button} onClick={this.toggleDrawer('left', true)} >Menu</Button>
-        <Drawer open={this.state.left} onRequestClose={this.toggleDrawer('left', false)}>
+        <Button
+          className={classes.button}
+          onClick={this.toggleDrawer('left', true)}
+        >
+          Menu
+        </Button>
+        <Drawer
+          open={this.state.left}
+          onRequestClose={this.toggleDrawer('left', false)}
+          >
           <div
             tabIndex={0}
             role="button"

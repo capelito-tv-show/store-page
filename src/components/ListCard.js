@@ -20,10 +20,10 @@ function ListCard(props) {
           <ListItemText primary="セット" />
         </ListItem>
         <Divider />
-        <ListItem button>
-          <ListItemText primary="珈琲" />
-        </ListItem>
-        <Divider />
+        <ListItem button><ListItemText primary="珈琲" /></ListItem><Divider />
+        <ListItem button><ListItemText primary="紅茶" /></ListItem><Divider />
+        <ListItem button><ListItemText primary="そのほか飲み物" /></ListItem><Divider />
+        <ListItem button><ListItemText primary="ケーキセット" /></ListItem><Divider />
       </List>
     </div>
 

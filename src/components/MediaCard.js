@@ -12,15 +12,17 @@ const styles = {
   media: {
     height: 200,
   },
+  card: {
+    boxshadow: 0,
+  }
 };
 
 function MediaCard(props) {
   const { classes } = props;
   return(
     <div>
-      <Card>
+      <Card >
         <CardMedia
-          className={classes.media}
           image="../images/coffee.jpg"
           title="Coffee sample"
         />

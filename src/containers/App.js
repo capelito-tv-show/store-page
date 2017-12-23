@@ -6,6 +6,7 @@ import Home from './Home';
 import Menu from './Menu';
 import Access from './Access';
 import Blog from './Blog';
+import Gallary from './Gallary';
 import DashBoard from '../admin/containers/dashboard';
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
               <Route path="/menu" component={Menu} />
               <Route path="/access" component={Access} />
               <Route path="/blog" component={Blog} />
+              <Route path="/gallary" component={Gallary} />
               <Route path="/admin" component={DashBoard} />
             </Switch>
           </BrowserRouter>

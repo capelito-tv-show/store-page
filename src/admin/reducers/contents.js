@@ -1,7 +1,7 @@
 
 function contents(state = [], action) {
-  switch (actio.type) {
-    case 'BLOGS_RECEIVE_DATA' :
+  switch (action.type) {
+    case 'CONTENT_RECEIVE_DATA' :
       let contents = []
       if (action.data) {
         Object.keys(action.data).forEach(key => {
@@ -24,7 +24,7 @@ function contents(state = [], action) {
 
       case 'ADD_CONTENT':
       return [
-        ..state,
+        ...state,
         {
           key:action.data.key,
           text: action.data.text,
@@ -34,8 +34,8 @@ function contents(state = [], action) {
 
       case 'CHANGE_CONTENT':
         state.map(content => {
-          if(todo.key == action.data.key){
-            content.completed = !todo.completed;
+          if(content.key == action.data.key){
+            content.completed = !content.completed;
           }
         });
         return [
