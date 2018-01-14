@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import contents from './contents';
+import Articles from './article_reducer';
 
 export default combineReducers({
-  contents,
+  Articles,
 });

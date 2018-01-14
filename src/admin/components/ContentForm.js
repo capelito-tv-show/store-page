@@ -1,23 +1,51 @@
 import React, { Component } from 'react';
-
-import Header from '../components/Header';
-
+import trim from 'trim';
+import firebase from 'firebase';
+import { firebaseDb,  } from '../Firebase';
 
 class ContentForm extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { value: ''};
+    this.onChange = this.onChange.bind(this);
+    this.onKeyup = this.onKeyup.bind(this);
+    this.state = {
+      message: '',
+    };
+  }
+
+  onChange(e) {
+    this.setState({
+      message: e.target.value
+    });
+  }
+
+  onKeyup(e){
+    if(e.keyCode === 13 && trim(e.target.value) !== ''){
+      e.preventDefault();
+      let dbCon = this.props.db.database().ref('/messages');
+      dbCon.push({
+        message: trim(e.target.value)
+      });
+      this.setState({
+        message: ''
+      });
+    }
   }
 
   render() {
     return (
-      <form>
-        <label>
-          <textarea value={this.state.value} onChange={this.handleChange} />
-          <input type="submit" value="Submit" />
-        </label>
-      </form>
+      <from>
+        <textarea
+          className="tectarea"
+          placeholder="Type a message"
+          onChange={this.onChange}
+          onKeyUp={this.onKeyUp}
+          value={this.state.message}
+        >
+        </textarea>
+        <button type="submit" />
+      </from>
     );
   }
 }

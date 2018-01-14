@@ -1,53 +1,52 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
-import AddContent from '../components/AddContent';
-import ContentForm from '../components/ContentForm';
+import AddArticle from '../components/AddArticle';
+
+import {
+  loadArticles,
+  addArticle,
+  updateArticle,
+} from '../actions/article';
 
 //Material-ui
 import { withStyles } from 'material-ui/styles';
 
-//action
-import {
-  loadContents,
-  addContent,
-  deleteContent,
-  updateContent
-} from '../actions/contents';
-
-
 class DashBoard extends Component {
-  constructor() {
-    super();
-    this.addContent = this.addContent.bind(this);
+  constructor(props) {
+    super(props);
+    this.addArticle = this.addArticle.bind(this);
+    this.toggleArticle = this.toggleArticle.bind(this);
   }
 
   componentDidMount() {
     const {dispatch} = this.props;
-    // dispatch(loadContent());
+    dispatch(loadArticles());
   }
 
   render() {
-    const {contents} = this.props;
+    const {Articles} = this.props;
     return (
       <div>
         <Header />
-        <AddContent
-          onAddContent={this.addContent}
-        />
+        <AddArticle onAddArticle={this.addArticle} />
       </div>
     );
   }
 
-  addContent(text){
-    const { dispatch } = this.props;
-    dispatch(addContent(text))
+  addArticle(title){
+    const {dispatch} = this.props;
+    dispatch(addArticle(title))
+  }
+  toggleArticle(key) {
+    const {dispatch} = this.props;
+    dispatch(updateArticle(key))
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    contents: state.contents ? state.content : []
+    Articles: state.Articles ? state.Articles : []
   }
 }
 
