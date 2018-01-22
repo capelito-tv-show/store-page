@@ -1,0 +1,74 @@
+/* mainContents */
+.App {
+  text-align: center;
+}
+
+.mainContents {
+  height: 100%;
+  background-color: #f8f8f7;
+}
+
+
+/* footer*/
+footer {
+  width: auto;
+  padding: 0 0 0 200px;
+  position: relative;
+  /*z-index: 1;*/
+  background: #F3F1EF;
+  display: block;
+  clear: both;
+}
+
+
+
+@media screen and (max-width: 909px) {
+  .MainImage {
+    width: 100%;
+  }
+
+  .global {
+    padding: 0;
+    width: auto;
+    height: auto;
+    position:relative;
+    z-index: 1010;
+    min-height: 0;
+    background-position: top;
+    background-size: 100%;
+  }
+
+  .logo {
+    position: absolute;
+    top: 0;
+    display: block;
+  }
+
+  .mainContents {
+    /*margin-left: 200px;
+    padding: 50px 100px 50px 100px;*/
+  }
+
+}
+
+
+@media screen and (min-width: 910px) {
+  .MainImage {
+    width: 50%;
+  }
+
+
+  .wrapper {
+    padding-left: 200px;
+  }
+
+  .mainContents {
+    margin-left: 200px;
+    padding: 50px 100px 50px 100px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+}

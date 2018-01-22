@@ -1,0 +1,100 @@
+header {
+  display: block;
+}
+.global {
+  background-color: rgb(92,29,7);
+  width: 160px;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  min-height: 450px;
+}
+.phone {
+  bottom: 43px;
+  position: absolute;
+  font-size: 100%;
+}
+.address {
+  bottom: 0;
+  position: absolute;
+
+}
+
+.megaNav {
+  margin: 20px;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  padding: 15px 0;
+  text-align: left;
+}
+
+ul li {
+  padding: 20px 10px;
+}
+
+li a {
+  color: white;
+  text-decoration: none;
+}
+img {
+  vertical-align: middle;
+}
+
+nav {
+  display: block;
+}
+
+h1 {
+  margin: 0;
+}
+.logo {
+  height: auto;
+  padding: 10px;
+}
+
+
+
+
+@media screen and (max-width: 909px) {
+  .global {
+    padding: 0;
+    width: auto;
+    height: auto;
+    position:relative;
+    z-index: 1010;
+    min-height: 0;
+    background-position: top;
+    background-size: 100%;
+  }
+
+  .logo {
+    width: 80px;
+    margin: auto;
+    position: relative;
+    top: 0;
+    display: block;
+  }
+
+  .megaNav {
+    padding: 0px 0px 17px 0px;
+  }
+
+  nav ul li {
+    width: 25%;
+    float: left;
+  }
+
+}
+
+.subNav {
+  font-size: 11px;
+}
+
+@media screen and (max-width: 1023px) {
+
+}
