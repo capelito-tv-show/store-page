@@ -1,7 +1,6 @@
 import React from "react";
 
 import { withStyles } from "material-ui/styles";
-import Grid from 'material-ui/Grid';
 import Card, { CardContent } from "material-ui/Card";
 import Divider from "material-ui/Divider";
 

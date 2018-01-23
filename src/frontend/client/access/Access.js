@@ -7,9 +7,6 @@ import {
   Marker
 } from "react-google-maps";
 
-import Header from "../shared/view/Header";
-import Footer from "../shared/view/Footer";
-
 //Rreact-google-maps
 const MapWithAMarker = withScriptjs(
   withGoogleMap(props => (

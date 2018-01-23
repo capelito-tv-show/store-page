@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {firebaseApp,firebaseDb} from '../../shared/Firebase';
 //Material-ui
 import { withStyles } from "material-ui/styles";
 import Hidden from "material-ui/Hidden";
@@ -6,11 +7,9 @@ import Grid from "material-ui/Grid";
 import Card, { CardContent } from "material-ui/Card";
 import Typography from "material-ui/Typography";
 import Divider from "material-ui/Divider";
-
 //components
 import ListCard from "../components/ListCard";
 import Drawer from "../components/MenuDrawers";
-
 //image
 import coffee from "../shared/images/coffee.jpg";
 
@@ -34,11 +33,34 @@ const styles = {
   }
 };
 
+
 class Menu extends Component {
+
+  constructor() {
+    super();
+  }
+  state = {
+    menus: [],
+    loading: true
+  };
+
+  componentWillMount() {
+    lef menuRef = firebaseDb.ref('menu/coffee/blend/1');
+
+    newsRef.on('value', function(snapshot) {
+      this.setState({
+        menus: snapshot.val(),
+        loading: false
+      })
+    });
+  }
   render() {
     return (
       <div className={this.props.classes.Menu}>
         <div className="wrapper">
+          {this.prop.children && ReactcloneElement(this.ptops.children, {
+
+          })}
           <Grid container spacing={0} justify="left">
             <Grid item xs={12} md={9}>
               <div className={this.props.classes.MenuBox}>
