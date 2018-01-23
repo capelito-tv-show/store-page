@@ -8,6 +8,7 @@ import Menu from './client/menu/Menu';
 import Access from './client/access/Access';
 import Gallary from './client/gallary/Gallary';
 import CommercialTransaction from './client/privacy/about_buisiness';
+import News from './client/articles/News';
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
                 <Route path="/access" component={Access} />
                 <Route path="/gallary" component={Gallary} />
                 <Route path="/Commercial" component={CommercialTransaction} />
+                <Route path="/news" component={News} />
                 <Footer />
               </div>
 

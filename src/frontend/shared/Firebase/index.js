@@ -2,5 +2,5 @@ import firebase from 'firebase';
 import { firebaseConfig } from './config';
 
 export const firebaseApp = firebase.initializeApp(firebaseConfig);
-export const firebaseDb = firebaseApp.database();
+export const firebaseDb = firebase.database();
 export const firebaseStorage = firebase.storage();

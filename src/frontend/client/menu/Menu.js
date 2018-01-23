@@ -6,12 +6,6 @@ import Grid from "material-ui/Grid";
 import Card, { CardContent } from "material-ui/Card";
 import Typography from "material-ui/Typography";
 import Divider from "material-ui/Divider";
-import Table, {
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow
-} from "material-ui/Table";
 
 //components
 import ListCard from "../components/ListCard";
@@ -61,37 +55,7 @@ class Menu extends Component {
                   </CardContent>
                 </Card>
               </div>
-
-              <div className={this.props.classes.MenuBox}>
-                <Card className={this.props.classes.Card}>
-                  <CardContent className={this.props.classes.CardContent}>
-                    <Typography type="headline" component="h1">
-                      珈琲
-                    </Typography>
-                    <Divider />
-                    <Table>
-                      <TableRow>
-                        <TableCell> 珈琲 </TableCell>
-                        <TableCell> 410円 </TableCell>
-                      </TableRow>
-                    </Table>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <div className={this.props.classes.MenuBox}>
-                <Card className={this.props.classes.Card}>
-                  <CardContent className={this.props.classes.CardContent}>
-                    <Typography type="headline" component="h1">
-                      珈琲
-                    </Typography>
-                    <Divider />
-                    <Typography component="p">
-                      ここにメニューの詳細が出てきます
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </div>
+              <div className={this.props.classes.MenuBox} />
             </Grid>
 
             <Hidden mdDown>

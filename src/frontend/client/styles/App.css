@@ -54,7 +54,7 @@ footer {
 
 @media screen and (min-width: 910px) {
   .MainImage {
-    width: 50%;
+    width: 80%;
   }
 
 
@@ -63,8 +63,8 @@ footer {
   }
 
   .mainContents {
-    margin-left: 200px;
-    padding: 50px 100px 50px 100px;
+    margin-left: 160px;
+    padding: 100px;
   }
 
   .logo {
