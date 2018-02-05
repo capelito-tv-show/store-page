@@ -83,6 +83,7 @@ class MenuCard extends Component {
         </div>
       );
     });
+    if (!this.state.menus) return <div>Waiting...</div>;
     return (
       <div>
         <Grid container className={MenuCard}>
