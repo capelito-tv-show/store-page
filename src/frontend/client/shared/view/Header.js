@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-junctions";
 import "../../styles/Header.css";
 import "../../styles/App.css";
 
-
 import logo from "../images/brand_logo.png";
-
 
 class Header extends Component {
   render() {
@@ -13,41 +11,45 @@ class Header extends Component {
       <header className="global">
         <div className="header">
           <h1>
-            <Link to="/">
+            <Link href="/">
               <img src={logo} className="logo" alt="珈琲工房すがの" />
             </Link>
           </h1>
           <nav className="megaNav">
             <ul>
               <li>
-                <Link to="/Blog">
-                <span>News</span><ol />
-                <span className="subNav">最近のニュース</span>
+                <Link href="/Blog">
+                  <span>News</span>
+                  <ol />
+                  <span className="subNav">最近のニュース</span>
                 </Link>
               </li>
               <li>
-                <Link to="/Menu">
+                <Link href="/Menu">
                   Menu<br />
                   <span className="subNav">喫茶メニュー</span>
                 </Link>
               </li>
               <li>
-                <Link to="/Blog">
-                  <span>Coffee</span><br />
+                <Link href="/Blog">
+                  <span>Coffee</span>
+                  <br />
                   <span className="subNav">珈琲豆のリスト</span>
                 </Link>
               </li>
               <li>
-                <Link to="/Blog">
-                  <span>Purchase</span><br />
+                <Link href="/Blog">
+                  <span>Purchase</span>
+                  <br />
                   <span className="subNav">珈琲豆のご購入</span>
                 </Link>
               </li>
               <li>
-                <Link to="/Access">
-                <span>Access</span><br />
-                <span className="subNav">お店のご案内</span>
-              </Link>
+                <Link href="/Access">
+                  <span>Access</span>
+                  <br />
+                  <span className="subNav">お店のご案内</span>
+                </Link>
               </li>
 
               {/* <li className="phone">お問い合わせ：054-2574-5920</li>
