@@ -49,19 +49,22 @@ footer {
     padding: 50px 100px 50px 100px;*/
   }
 
+  .wrapper {
+    padding: 0;
+  }
+
+
 }
+
 
 
 @media screen and (min-width: 910px) {
   .MainImage {
     width: 80%;
   }
-
-
   .wrapper {
-    padding-left: 200px;
+    padding-left: 160px;
   }
-
   .mainContents {
     margin-left: 160px;
     padding: 100px;

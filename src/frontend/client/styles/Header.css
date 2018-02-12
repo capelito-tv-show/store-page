@@ -22,9 +22,6 @@ header {
 
 }
 
-.megaNav {
-  margin: 20px;
-}
 
 ul {
   margin: 0;
@@ -84,8 +81,14 @@ h1 {
     padding: 0px 0px 17px 0px;
   }
 
+  ul {
+    margin: 0;
+    list-style: none;
+    padding: 15px 0;
+    text-align: left;
+  }
   nav ul li {
-    width: 25%;
+    font-size: 11px;
     float: left;
   }
 
