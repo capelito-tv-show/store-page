@@ -18,7 +18,7 @@ class Header extends Component {
           <nav className="megaNav">
             <ul>
               <li>
-                <Link href="/Blog">
+                <Link href="/News">
                   <span>News</span>
                   <ol />
                   <span className="subNav">最近のニュース</span>
@@ -31,7 +31,7 @@ class Header extends Component {
                 </Link>
               </li>
               <li>
-                <Link href="/Blog">
+                <Link href="/CoffeeList">
                   <span>Coffee</span>
                   <br />
                   <span className="subNav">珈琲豆のリスト</span>

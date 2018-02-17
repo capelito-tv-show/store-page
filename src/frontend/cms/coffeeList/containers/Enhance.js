@@ -1,9 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import { Form } from "../../../shared/Form/form";
 import { Button } from "../../../shared/Form/Button";
 import { compose, withState, withHandlers } from "recompose";
 import { firebaseDb } from "../../../shared/Firebase";
-import { Link } from 'react-junctions';
+import TasteSelector from "./TasteSelector";
+
+import "react-select/dist/react-select.css";
 
 const Enhance = compose(
   withState("category", "updateCategory", ""),
@@ -34,17 +36,17 @@ const Enhance = compose(
   })
 );
 
-const AddMenu = ({ Category, Title, Price, Detail, handleSubmit }) => {
+const AddCoffeeList = ({ Category, Title, Price, Detail,value,RateChange, handleSubmit }) => {
   return (
     <div className="admin-menu">
       <Form className="category" value={Category} placeholder="カテゴリーを入力" />
       <Form className="title" value={Title} placeholder="メニュー名" />
       <Form className="price" value={Price} placeholder="価格" />
       <Form className="detail" value={Detail} placeholder="メニューの詳細" />
-      {/* <button onClick={handleSubmit}><Link href="/Menu" >ぼたん</Link></button> */}
+      <TasteSelector />
       <Button handleSubmit={handleSubmit} link="/admin/cms/completed" />
     </div>
   );
 };
 
-export default Enhance(AddMenu);
+export default Enhance(AddCoffeeList);
