@@ -25,11 +25,15 @@ const Enhance = compose(
     },
     handleSubmit: ({ category, title, price, detail }) => event => {
       event.preventDefault();
-      firebaseDb.ref("menus/" + category).push({
-        title,
-        price,
-        detail
-      });
+      if (title == "" || detail == "") {
+        alert("タイトルまたは詳細を入力してください")
+      } else {
+        firebaseDb.ref("menus/" + category).push({
+          title,
+          price,
+          detail
+        });
+      }
     }
   })
 );
@@ -41,8 +45,8 @@ const AddMenu = ({ Category, Title, Price, Detail, handleSubmit }) => {
       <Form className="title" value={Title} placeholder="メニュー名" />
       <Form className="price" value={Price} placeholder="価格" />
       <Form className="detail" value={Detail} placeholder="メニューの詳細" />
-      {/* <button onClick={handleSubmit}><Link href="/Menu" >ぼたん</Link></button> */}
-      <Button handleSubmit={handleSubmit} link="/admin/cms/completed" />
+      <button onClick={handleSubmit}><Link href="/Menu" >ぼたん</Link></button>
+      {/* <Button handleSubmit={handleSubmit} link="/admin/cms/completed" /> */}
     </div>
   );
 };

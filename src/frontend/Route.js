@@ -11,10 +11,14 @@ import AddMenu from "./cms/menus/containers/Enhance";
 import AddCoffeeList from "./cms/coffeeList/containers/Enhance";
 import Completed from "./cms/Redirect/Completed";
 import AddNews from "./cms/news/hoc/Enhance";
+import Auth from "./cms/Authentication/Containers/Enhance";
+import Authentication from './cms/Authentication/Authentication';
 
 import { createJunctionTemplate, createPageTemplate } from "junctions";
 
 export const AppJunctionTemplate = createJunctionTemplate({
+  component: App,
+
   children: {
     "/": createPageTemplate({
       title: "珈琲工房すがの：駿府公園すぐちかく",
@@ -55,7 +59,13 @@ export const AppJunctionTemplate = createJunctionTemplate({
     "/admin/cms/coffee": createPageTemplate({
       title: "",
       component: AddCoffeeList
+    }),
+    "/auth": createPageTemplate({
+      title: "",
+      component: Authentication
     })
   },
-  component: App
 });
+
+//App にヘッダーを入れず、ピュアなコンンポーネントを作成
+// 要はAdmin 部分とClieantサイドの２種類の親コンポーネントを作成する必要がある

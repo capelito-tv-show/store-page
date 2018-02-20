@@ -14,7 +14,7 @@ const Enhance = compose(
   withState("subTitle", "setSubTitle", ""),
   withState("date", "", moment().format("MM/DD/YYYY")),
   withHandlers({
-    description: description => event => {
+    Description: description => event => {
       description.updateValue(event.target.value);
     },
     Title: title => event => {
@@ -23,33 +23,31 @@ const Enhance = compose(
     SubTitle: subTitle => event => {
       subTitle.setSubTitle(event.target.value);
     },
-    submit: ({ date, title, subTitle, description }) => event => {
+    Submit: ({ date, title, subTitle, description }) => event => {
       event.preventDefault();
-      firebaseDb.ref("news/").push({
-        date,
-        title,
-        subTitle,
-        description
-      });
-      console.log({
-        date,
-        title,
-        subTitle,
-        description
-      });
+      if (title == "" || description == "") {
+        alert("タイトルまたはテキストを入力してください")
+      } else {
+        firebaseDb.ref("news/").push({
+          date,
+          title,
+          subTitle,
+          description
+        });
+      };
     }
   })
 );
 
-const AddNews = ({ description, date, Title, SubTitle, submit }) => {
+const AddNews = ({ Description, date, Title, SubTitle, Submit }) => {
   return (
     <div>
       <p>{date}</p>
       <form>
         <Form value={Title} placeholder="記事のタイトル" />
         <Form value={SubTitle} placeholder="サブタイトル" />
-        <textarea onChange={description} placeholder="ここにテキストを入力" />
-        <Button handleSubmit={submit} link="/admin/cms/completed" />
+        <textarea onChange={Description} placeholder="ここにテキストを入力" />
+        <Button handleSubmit={Submit} link="/admin/cms/completed/" />
       </form>
     </div>
   );
