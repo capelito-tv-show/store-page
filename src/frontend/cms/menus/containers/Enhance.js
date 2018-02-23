@@ -25,7 +25,7 @@ const Enhance = compose(
     },
     handleSubmit: ({ category, title, price, detail }) => event => {
       event.preventDefault();
-      if (title == "" || detail == "") {
+      if (title === "" || detail === "") {
         alert("タイトルまたは詳細を入力してください")
       } else {
         firebaseDb.ref("menus/" + category).push({
