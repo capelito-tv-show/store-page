@@ -3,28 +3,11 @@
   text-align: center;
 }
 
-.mainContents {
-  height: 100%;
-  background-color: #f8f8f7;
-}
-
-
-/* footer*/
-footer {
-  width: auto;
-  padding: 0 0 0 200px;
-  position: relative;
-  /*z-index: 1;*/
-  background: #F3F1EF;
-  display: block;
-  clear: both;
-}
-
-
 
 @media screen and (max-width: 909px) {
   .MainImage {
     width: 100%;
+    height: 250px;
   }
 
   .global {
@@ -60,13 +43,13 @@ footer {
 
 @media screen and (min-width: 910px) {
   .MainImage {
-    width: 80%;
+    height: 400px;
+    margin: 0 auto;
   }
   .wrapper {
     padding-left: 160px;
   }
   .mainContents {
-    margin-left: 160px;
     padding: 100px;
   }
 

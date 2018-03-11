@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 
-export const Form = ({ value,placeholder }) => {
+export const Form = ({ value, placeholder, className }) => {
   return (
-    <div>
-      <form>
-        <input type="text" onChange={value} placeholder={placeholder} />
-      </form>
-    </div>
+    <input
+      type="text"
+      onChange={value}
+      placeholder={placeholder}
+      className={className}
+    />
   );
 };

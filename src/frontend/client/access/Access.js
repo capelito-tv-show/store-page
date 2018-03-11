@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../styles/App.css";
+// import "../styles/App.css";
 import {
   withScriptjs,
   withGoogleMap,
@@ -24,7 +24,7 @@ class Access extends Component {
     return (
       <div>
         {/* MainContent */}
-        <div className="wrapper">
+        <div className="">
           <div className="">
             <MapWithAMarker
               googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"

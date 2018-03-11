@@ -21,20 +21,29 @@ const styles = theme => ({
   },
   menuList: {
     paddingBottom: "5px"
-    // borderBottom: "1px solid #D0D0D0"
+  },
+  menuCard: {
+    padding: "0 ",
+  },
+  table: {
+    display: "flex",
   },
   title: {
-    minWidth: "180px",
+    fontWeight: "bold",
     display: "inline-block",
-    [theme.breakpoints.down("md")]: {
-      margin: "0"
-    }
+    margin: "0"
+    // [theme.breakpoints.down("md")]: {
+    //   margin: "0"
+    // }
   },
   price: {
-    fontWeight: "bold"
+    margin: "0",
+    marginLeft: "auto",
   },
   detail: {
-    paddingBottom: "5px"
+    paddingBottom: "5px",
+    margin: "0",
+    fontSize: "11px"
     // borderBottom: "1px solid #D0D0D0"
   }
 });
@@ -46,7 +55,7 @@ class MenuCard extends Component {
   }
 
   componentWillMount() {
-    const blendRef = firebaseDb.ref("menus/blend");
+    const blendRef = firebaseDb.ref("menus/Blend");
     let _this = this;
 
     const menusRef = blendRef.on("value", function(snapshot) {
@@ -62,28 +71,23 @@ class MenuCard extends Component {
     const menus = this.state.menus;
     const menu = Object.keys(menus).map(key => {
       return (
-        <div>
-            <Grid item xs={6} md={6} lg={6} xl={6} key={key}>
-              <Paper className={classes.menuPaper}>
-                <div className={menus[key].category}>
-                  <ul className="MenuDetail">
-                    <li className={classes.menuList}>
-                      <span className={classes.title}>{menus[key].title}</span>
-                      <span className={classes.price}>{menus[key].price}</span>
-                    </li>
-                    <li>
-                      <span className={classes.detail}>
-                        {menus[key].detail}
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </Paper>
-            </Grid>
-        </div>
+        <Grid item xs={6} md={6} lg={6} xl={6} key={key}>
+          <Paper className={classes.menuPaper}>
+            <div className={menus[key].category}>
+              <ul className={classes.menuCard}>
+                <li className={classes.menuList}>
+                  <div className={classes.table}>
+                    <p className={classes.title}>{menus[key].title}</p>
+                    <p className={classes.price}>{menus[key].price}円</p>
+                  </div>
+                  <p className={classes.detail}>{menus[key].detail}</p>
+                </li>
+              </ul>
+            </div>
+          </Paper>
+        </Grid>
       );
     });
-    if (!this.state.menus) return <div>Waiting...</div>;
     return (
       <div>
         <Grid container className={MenuCard}>
@@ -91,9 +95,7 @@ class MenuCard extends Component {
             <h4 className={classes.mainTitle}>ブレンド珈琲</h4>
           </div>
           <Grid item xs={12}>
-            <Grid container>
-            {menu}
-            </Grid>
+            <Grid container>{menu}</Grid>
           </Grid>
         </Grid>
       </div>

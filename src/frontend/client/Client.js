@@ -1,9 +1,19 @@
 import React, { Component } from "react";
 import { JunctionActiveChild } from "react-junctions";
+import { withStyles } from "material-ui/styles";
 
-import Header from "./shared/view/Header";
+import Header from "./header/Enhance/withStyles";
 
-export default class Authentication extends Component {
+const styles = theme => ({
+  container: {
+    [theme.breakpoints.up('md')]: {
+    marginLeft: "160px",
+    },
+    marginLeft: "0px",
+  },
+})
+
+class Authentication extends Component {
   renderContent() {
     let junction = this.props.junction;
     let Component =
@@ -17,12 +27,17 @@ export default class Authentication extends Component {
   }
 
   render() {
+    const classes = this.props.classes;
     return (
       <div>
         <Header />
-        {this.renderContent()}
+        <div className={classes.container}>
+          {this.renderContent()}
+        </div>
         {/* <JunctionActiveChild junction={this.props.junction} /> */}
       </div>
     );
   }
 }
+
+export default withStyles(styles)(Authentication);

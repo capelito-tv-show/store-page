@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import Authentication from './Authentication';
 import { createJunctionTemplate, createPageTemplate } from 'junctions'
 
-import AddMenu from "./menus/containers/Enhance";
+import Menu from "./menus/containers";
+import DashBoard from './Dashboard/containers/Dashboard';
 import AddCoffeeList from "./coffeeList/containers/Enhance";
+import CoffeeList from './coffeeList/containers/CoffeeList';
 import AddNews from "./news/hoc/Enhance";
 import Completed from "./Redirect/Completed";
 
@@ -11,21 +13,25 @@ import Completed from "./Redirect/Completed";
 export default createJunctionTemplate(({ split }) => ({
   component: Authentication,
   children: {
+    "/": createPageTemplate({
+      title: "",
+      component: DashBoard
+    }),
     "/menu": createPageTemplate({
       title: "",
-      component: AddMenu
+      component: Menu
     }),
-    "/cms/completed": createPageTemplate({
+    "/completed": createPageTemplate({
       title: "",
       component: Completed
     }),
-    "/cms/news": createPageTemplate({
+    "/news": createPageTemplate({
       title: "",
       component: AddNews
     }),
-    "/cms/coffee": createPageTemplate({
+    "/coffeeList": createPageTemplate({
       title: "",
-      component: AddCoffeeList
+      component:  CoffeeList
     })
   }
 }));

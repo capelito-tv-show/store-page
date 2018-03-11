@@ -5,6 +5,7 @@ import { withStyles } from "material-ui/styles";
 import "../styles/App.css";
 // import MainImage from '../shared/images/store-outside2.jpg';
 import MainImage from "../shared/images/maincontents/shop_2.jpg";
+import SimpleSlider from '../home/MainImage';
 
 const styles = {
   about: {
@@ -25,9 +26,10 @@ class MaineContents extends Component {
       <div className="mainContents">
         <Grid container spacing={0} className={classes.MainImage}>
           <Grid item xs={12}>
-            <img className="MainImage" src={MainImage} alt="珈琲工房すがの" />
+            <SimpleSlider />
           </Grid>
         </Grid>
+
         <div className={classes.about}>
           <h3>珈琲工房すがの</h3>
           <p>

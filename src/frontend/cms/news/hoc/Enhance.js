@@ -1,12 +1,12 @@
 import React from "react";
 import DatePicker from "react-datepicker";
-import { Form } from "../../../shared/Form/form";
-import { Button } from "../../../shared/Form/Button";
 import { firebaseDb } from "../../../../frontend/shared/Firebase";
 import moment from "moment";
 import { compose, withState, withHandlers } from "recompose";
 
 import "react-datepicker/dist/react-datepicker.css";
+import AddNews from '../components/AddNews';
+import News from '../containers/News';
 
 const Enhance = compose(
   withState("description", "updateValue", ""),
@@ -39,18 +39,4 @@ const Enhance = compose(
   })
 );
 
-const AddNews = ({ Description, date, Title, SubTitle, Submit }) => {
-  return (
-    <div>
-      <p>{date}</p>
-      <form>
-        <Form value={Title} placeholder="記事のタイトル" />
-        <Form value={SubTitle} placeholder="サブタイトル" />
-        <textarea onChange={Description} placeholder="ここにテキストを入力" />
-        <Button handleSubmit={Submit} link="/admin/cms/completed/" />
-      </form>
-    </div>
-  );
-};
-
-export default Enhance(AddNews);
+export default Enhance(News);

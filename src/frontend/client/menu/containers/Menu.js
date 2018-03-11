@@ -6,15 +6,12 @@ import Paper from "material-ui/Paper";
 
 import MenuCard from "../components/menuCard";
 import Tea from "../components/tea";
+import Premium from '../components/Premium';
 import MenuImage from "../components/menuImage";
 
 const styles = theme => ({
   menu: {
-    marginLeft: "170px",
     margin: "auto",
-    [theme.breakpoints.down("md")]: {
-      margin: "0"
-    }
   },
   menuContents: {
     margin: "0 auto",
@@ -37,6 +34,7 @@ class Menu extends Component {
             <Grid item xs={12} md={7}>
               <MenuCard />
               <Tea />
+              <Premium />
             </Grid>
             <Grid item xs={12} md={5}>
               <MenuImage />

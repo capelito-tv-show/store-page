@@ -6,7 +6,7 @@ const Completed = () => {
     <div>
       <h2>追加が完了しました</h2>
       <Link href="/"><button>ホームに戻る</button></Link>
-      <Link href="/admin/cms/menu"><button>他のメニューを追加する</button></Link>
+      <Link href="/Admin/"><button>他のメニューを追加する</button></Link>
     </div>
   )
 }

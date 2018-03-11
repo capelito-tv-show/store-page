@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { JunctionActiveChild } from "react-junctions";
 import * as firebase from "firebase";
+import Header from './Header/containers/Enhance';
+import Auth from './Authentication/Containers/Enhance';
 
 export default class Authentication extends Component {
   componentDidMount() {
@@ -8,7 +10,11 @@ export default class Authentication extends Component {
       if (firebaseUser) {
         console.log(firebaseUser);
       } else {
-        console.log("not loged in ");
+        return(
+          <div>
+            <Auth />
+          </div>
+        )
       }
     });
   }
@@ -19,7 +25,9 @@ export default class Authentication extends Component {
       junction.activeChild &&
       junction.activeChild.component;
     if (!Component) {
-      return <h2>404: お探しのページはありません</h2>;
+      return (
+        <h2>お探しのページはありません</h2>
+      )
     } else {
       return <JunctionActiveChild junction={junction} />;
     }
@@ -28,8 +36,7 @@ export default class Authentication extends Component {
   render() {
     return (
       <div>
-        <h1>Helloo</h1>
-        {/* <JunctionActiveChild junction={this.props.junction} /> */}
+        <Header />
         {this.renderContent()}
       </div>
     );

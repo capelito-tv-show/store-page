@@ -5,6 +5,7 @@ import Home from "./home/Home";
 import Menu from "./menu/containers/Menu";
 import Access from "./access/Access";
 import CommercialTransaction from "./privacy/about_buisiness";
+import News from './news/containers';
 
 export default createJunctionTemplate(({ split }) => ({
   component: Client,
@@ -24,6 +25,10 @@ export default createJunctionTemplate(({ split }) => ({
     "/CommercialTransaction": createPageTemplate({
       title: "",
       component: CommercialTransaction
-    })
+    }),
+    "/News": createJunctionTemplate({
+      title: "珈琲工房すがの：お知らせ",
+      component: News,
+    }),
   }
 }));

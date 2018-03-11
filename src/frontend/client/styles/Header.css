@@ -28,14 +28,17 @@ ul {
   list-style: none;
   padding: 15px 0;
   text-align: left;
+  display: table;
 }
 
 ul li {
   padding: 20px 10px;
+  display: table-cell;
 }
 
 li a {
   color: white;
+  font-size: 14px;
   text-decoration: none;
 }
 img {

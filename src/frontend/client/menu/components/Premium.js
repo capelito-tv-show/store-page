@@ -5,30 +5,58 @@ import Grid from "material-ui/Grid";
 import Paper from "material-ui/Paper";
 
 const styles = theme => ({
+  categoryTitle: {
+    width: "100%",
+    marginRight: "20px",
+    background: "rgb(92,29,7)"
+  },
+  mainTitle: {
+    paddingLeft: "18px",
+    color: "white",
+    textAlign: "left",
+    fontWeight: "50"
+  },
+  menuPaper: {
+    boxShadow: "none"
+  },
   menuList: {
-    paddingBottom: "0",
+    paddingBottom: "5px"
+  },
+  menuCard: {
+    padding: "0 "
+  },
+  table: {
+    display: "flex"
   },
   title: {
+    fontWeight: "bold",
     minWidth: "180px",
     display: "inline-block",
-    [theme.breakpoints.down("md")]: {
-      margin: "0"
-    }
+    margin: "0"
+    // [theme.breakpoints.down("md")]: {
+    //   margin: "0"
+    // }
   },
   price: {
-    fontWeight: "bold",
+    margin: "0",
+    marginLeft: "auto"
+  },
+  detail: {
+    paddingBottom: "5px",
+    margin: "0",
+    fontSize: "11px"
+    // borderBottom: "1px solid #D0D0D0"
   }
 });
 
-
-class Tea extends Component {
+class Premium extends Component {
   constructor() {
     super();
-    this.state = {teas: []};
+    this.state = { teas: [] };
   }
 
   componentWillMount() {
-    const tea = firebaseDb.ref("menus/Original");
+    const tea = firebaseDb.ref("menus/Premium");
     let _this = this;
 
     const menusRef = tea.on("value", function(snapshot) {
@@ -43,7 +71,7 @@ class Tea extends Component {
     const classes = this.props.classes;
     return (
       <div>
-        <Grid container className={Tea}>
+        <Grid container className={Premium}>
           <Grid item xs={12}>
             <Grid container>
               {this.state.teas.map(menu => (
@@ -55,7 +83,9 @@ class Tea extends Component {
                           <span className={classes.title}>{menu.title}</span>
                           <span className={classes.price}>{menu.price}</span>
                         </li>
-                        <li><span className={classes.detail}>{menu.detail}</span></li>
+                        <li>
+                          <span className={classes.detail}>{menu.detail}</span>
+                        </li>
                       </ul>
                     </div>
                   </Paper>
@@ -69,4 +99,4 @@ class Tea extends Component {
   }
 }
 
-export default withStyles(styles)(Tea);
+export default withStyles(styles)(Premium);

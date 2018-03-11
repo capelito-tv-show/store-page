@@ -7,7 +7,7 @@ import App from "./App";
 export default createJunctionTemplate(({ split }) => ({
   component: App,
   children: {
-    "/": split(() => import("./client/Route").then(m => m.default)),
+    "/Home": split(() => import("./client/Route").then(m => m.default)),
     "/Admin": split(() => import("./cms/Route").then(m => m.default))
   }
 }));
