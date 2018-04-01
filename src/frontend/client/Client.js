@@ -7,7 +7,7 @@ import Header from "./header/Enhance/withStyles";
 const styles = theme => ({
   container: {
     [theme.breakpoints.up('md')]: {
-    marginLeft: "160px",
+      paddingLeft: "130px",
     },
     marginLeft: "0px",
   },

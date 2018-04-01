@@ -21,7 +21,7 @@ const styles = theme => ({
   },
   } ,
   global: {
-    backgroundColor: "rgba(92,29,7,0.5)",
+    backgroundColor: "rgba(49,21,1,1)",
     width: "130px",
     height: "100%",
     position: "fixed",

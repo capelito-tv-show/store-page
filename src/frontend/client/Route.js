@@ -1,7 +1,7 @@
 import Client from "./Client";
 import { createJunctionTemplate, createPageTemplate } from "junctions";
 
-import Home from "./home/Home";
+import Main from "./home/styles/withstyles";
 import Menu from "./menu/containers/Menu";
 import Access from "./access/Access";
 import CommercialTransaction from "./privacy/about_buisiness";
@@ -12,7 +12,7 @@ export default createJunctionTemplate(({ split }) => ({
   children: {
     "/": createPageTemplate({
       title: "珈琲工房すがの：駿府公園すぐちかく",
-      component: Home
+      component: Main
     }),
     "/Menu": createPageTemplate({
       title: "珈琲工房すがの：メニュー",

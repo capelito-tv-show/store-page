@@ -1,8 +1,12 @@
 /* mainContents */
 .App {
   text-align: center;
+  background-color: #9e9e9e0d;
 }
 
+ul {
+  list-style: none;
+}
 
 @media screen and (max-width: 909px) {
   .MainImage {
@@ -47,10 +51,10 @@
     margin: 0 auto;
   }
   .wrapper {
-    padding-left: 160px;
+    padding-left: 123px;
   }
   .mainContents {
-    padding: 100px;
+    padding-top: 56px;
   }
 
   .logo {

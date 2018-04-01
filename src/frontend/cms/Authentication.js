@@ -18,7 +18,6 @@ export default class Authentication extends Component {
       }
     });
   }
-
   renderContent() {
     let junction = this.props.junction;
     let Component =
