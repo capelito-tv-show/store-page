@@ -1,52 +1,10 @@
 import React, { Component } from "react";
 import { firebaseDb } from "../../../shared/Firebase";
 import { withStyles } from "material-ui/styles";
+import {styles} from '../styles/withStyle';
 import Grid from "material-ui/Grid";
 import Paper from "material-ui/Paper";
 
-const styles = theme => ({
-  categoryTitle: {
-    width: "100%",
-    marginRight: "20px",
-    background: "rgb(92,29,7)"
-  },
-  mainTitle: {
-    paddingLeft: "18px",
-    color: "white",
-    textAlign: "left",
-    fontWeight: "50"
-  },
-  menuPaper: {
-    boxShadow: "none"
-  },
-  menuList: {
-    paddingBottom: "5px"
-  },
-  menuCard: {
-    padding: "0 ",
-  },
-  table: {
-    display: "flex",
-  },
-  title: {
-    fontWeight: "bold",
-    display: "inline-block",
-    margin: "0"
-    // [theme.breakpoints.down("md")]: {
-    //   margin: "0"
-    // }
-  },
-  price: {
-    margin: "0",
-    marginLeft: "auto",
-  },
-  detail: {
-    paddingBottom: "5px",
-    margin: "0",
-    fontSize: "11px"
-    // borderBottom: "1px solid #D0D0D0"
-  }
-});
 
 class MenuCard extends Component {
   constructor() {

@@ -1,16 +1,11 @@
 import React, { Component } from "react";
-
 import { withStyles } from "material-ui/styles";
 import Grid from "material-ui/Grid";
-import Paper from "material-ui/Paper";
 
-import MenuCard from "../components/menuCard";
-import Tea from "../components/tea";
-import Premium from '../Enhance/Straight';
-import MenuImage from "../components/menuImage";
-import Other from "../components/Other";
-import Food from '../components/Food';
-import FoodSet from '../components/Set';
+import OriginalBlend from '../components/OriginalBlend';
+import Blend from '../components/Blend';
+import Manual from "../components/Manual";
+import Standard from '../components/StandardCoffee';
 
 const styles = theme => ({
   menu: {
@@ -23,10 +18,13 @@ const styles = theme => ({
       margin: "0",
       padding: "10px"
     }
-  }
+  },
+  manual: {
+    marginTop: "0",
+  },
 });
 
-class Menu extends Component {
+class CoffeeList extends Component {
   render() {
     const classes = this.props.classes;
 
@@ -35,15 +33,12 @@ class Menu extends Component {
         <div className={classes.menuContents}>
           <Grid container>
             <Grid item xs={12} md={7}>
-              <MenuCard />
-              <Premium />
-              <Tea />
-              <Other />
-              <Food />
-              <FoodSet />
+              <OriginalBlend />
+              <Blend />
+              <Standard />
             </Grid>
-            <Grid item xs={12} md={5}>
-              <MenuImage />
+            <Grid item xs={12} md={5} className={classes.manual}>
+              <Manual />
             </Grid>
           </Grid>
         </div>
@@ -52,4 +47,4 @@ class Menu extends Component {
   }
 }
 
-export default withStyles(styles)(Menu);
+export default withStyles(styles)(CoffeeList);

@@ -6,7 +6,7 @@ import Grid from "material-ui/Grid";
 import Paper from "material-ui/Paper";
 
 
-class Tea extends Component {
+class Other extends Component {
   constructor() {
     super();
     this.state = { menus: [] };
@@ -50,7 +50,7 @@ class Tea extends Component {
       <div>
         <Grid container className={classes.MenuCard}>
           <div className={classes.categoryTitle}>
-            <h4 className={classes.mainTitle}>紅茶</h4>
+            <h4 className={classes.mainTitle}>その他お飲物</h4>
           </div>
           <Grid item xs={12}>
             <Grid container>{menu}</Grid>
@@ -61,4 +61,4 @@ class Tea extends Component {
   }
 }
 
-export default withStyles(styles)(Tea);
+export default withStyles(styles)(Other);

@@ -10,18 +10,25 @@ const styles = theme => ({
     position: "absolute",
     top: "0",
     width: "100%",
-    height: "100%",
+    height: "60%",
     [theme.breakpoints.up("md")]: {
       left: "-130px",
-      paddingLeft: "130px"
+      paddingLeft: "130px",
+      height: "100%",
     }
   },
   top: {
     position: "relative",
     width: "100%",
     height: "100%",
-    [theme.breakpoints.up("md")]: {
-      // marginLeft: "-160px"
+  },
+  second: {
+    position: "relative",
+    width: "100%",
+    height: "100%",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0",
+      height: "auto"
     }
   },
   bloc: {
@@ -36,7 +43,10 @@ const styles = theme => ({
     height: "100%",
     padding: "40px 40px 40px 0",
     overflow: "hidden",
-    boxSizing: "border-box"
+    boxSizing: "border-box",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0",
+    },
   },
   MainImg: {
     height: "100%",
@@ -47,19 +57,22 @@ const styles = theme => ({
   },
   inner: {
     backgroundColor: "rgba(1,1,1,0.7)",
-    height: "100%",
-    padding:"0",
     fontWeight:"100",
     color: "white",
     [theme.breakpoints.up("md")]: {
       padding: "0 0 0 130px",
+      height: "100%",
     },
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       padding: "0"
     }
   },
   IntroTitle: {
-    width: "100%"
+    width: "95%",
+  },
+  p: {
+    width: "97%",
+    margin: "10px 0"
   },
   innerRight: {
     height: "100%",
@@ -70,11 +83,21 @@ const styles = theme => ({
       padding: "0"
     }
   },
+  innerCenter: {
+    height: "100%",
+    padding:"0",
+    fontWeight:"100",
+    [theme.breakpoints.up("md")]: {
+      padding: "0 0 0 130px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "0"
+    }
+  },
   card: {
-    padding: "100px",
-    // bottom: 0,
-    // position: "absolute",
-    // width: "33%",
+    [theme.breakpoints.up("md")]: {
+      padding: "100px",
+    },
   },
   CardImage: {
     width: "100%",
@@ -86,13 +109,19 @@ const styles = theme => ({
     top: 78,
     position: "absolute",
     width: "33%",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0",
+      width: "100%",
+      marginTop: "100px",
+    },
   },
   intro: {
-    position: "absolute",
     width: "100%",
-    height: "100%",
+    margin: "0",
     [theme.breakpoints.up("md")]: {
-      paddingLeft: "130px"
+      paddingLeft: "130px",
+      height: "100%",
+      position: "absolute",
     }
   },
   MenuImage: {

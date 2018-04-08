@@ -3,9 +3,6 @@ import AppBar from "material-ui/AppBar";
 import Toolbar from 'material-ui/Toolbar';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import { withStyles } from "material-ui/styles";
-import { compose, withStateHandlers } from "recompose";
-import IconButton from 'material-ui/IconButton';
-import MenuIcon from 'material-ui/Menu';
 import HeaderDrawer from "./Drawer";
 
 const theme = createMuiTheme({

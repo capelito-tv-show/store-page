@@ -56,7 +56,7 @@ class Premium extends Component {
   }
 
   componentWillMount() {
-    const tea = firebaseDb.ref("menus/Premium");
+    const tea = firebaseDb.ref("menus/Straight");
     let _this = this;
 
     const menusRef = tea.on("value", function(snapshot) {

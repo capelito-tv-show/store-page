@@ -15,16 +15,21 @@ const styles = theme => ({
   },
   content: {
     textAlign: "left",
-    padding: "16px 24px"
+    padding: "16px 24px",
+    listStyle: "none",
   },
   menuList: {
     paddingBottom: "5px"
   },
   menuCard: {
-    padding: "0 ",
+    padding: "0",
+    margin: "0",
   },
   table: {
     display: "flex",
+  },
+  mainContent: {
+    margin: "0 auto",
   },
   title: {
     fontWeight: "bold",

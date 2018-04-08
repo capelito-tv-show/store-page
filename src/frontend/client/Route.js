@@ -6,6 +6,7 @@ import Menu from "./menu/containers/Menu";
 import Access from "./access/Access";
 import CommercialTransaction from "./privacy/about_buisiness";
 import News from './news/containers';
+import CoffeeList from './coffeeList/containers';
 
 export default createJunctionTemplate(({ split }) => ({
   component: Client,
@@ -17,6 +18,10 @@ export default createJunctionTemplate(({ split }) => ({
     "/Menu": createPageTemplate({
       title: "珈琲工房すがの：メニュー",
       component: Menu
+    }),
+    "/CoffeeList": createPageTemplate({
+      title: "珈琲工房すがの：珈琲豆",
+      component: CoffeeList,
     }),
     "/Access": createPageTemplate({
       title: "珈琲工房すがのまでの道のりです。",

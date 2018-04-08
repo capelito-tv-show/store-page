@@ -13,9 +13,6 @@ class Menu extends Component {
           <Grid item xs={12} md={7}>
             <NewsContent />
           </Grid>
-          <Grid item xs={12} md={5}>
-            <h2>なにか</h2>
-          </Grid>
         </Grid>
       </div>
     );

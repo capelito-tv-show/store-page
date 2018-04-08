@@ -21,7 +21,6 @@ const styles = theme => ({
   },
   menuList: {
     paddingBottom: "5px"
-    // borderBottom: "1px solid #D0D0D0"
   },
   title: {
     minWidth: "180px",
@@ -35,7 +34,6 @@ const styles = theme => ({
   },
   detail: {
     paddingBottom: "5px"
-    // borderBottom: "1px solid #D0D0D0"
   }
 });
 

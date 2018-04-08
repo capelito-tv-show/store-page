@@ -52,11 +52,11 @@ class NewsContent extends Component {
       );
     });
     return (
-      <div>
+      <div className={classes.wrapper}>
         <Grid container className={NewsContent}>
           <div className={classes.categoryTitle}>
           </div>
-          <Grid item xs={12}>
+          <Grid item xs={12} className={classes.MainContent}>
             <Grid container>{menu}</Grid>
           </Grid>
         </Grid>
